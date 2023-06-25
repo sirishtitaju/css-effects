@@ -1,85 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap');
-body{
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap");
+body {
     font-family: "Manrope", sans-serif;
-    height:200vh;
+    height: 250vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-h1{
+h1 {
     position: absolute;
     top: 5%;
     font-size: 3rem;
 }
 
-h1 span{
+h1 span {
     text-align: center;
     font-weight: 300;
     font-size: 2.8rem;
-    opacity: .6;
+    opacity: 0.6;
 }
 
-span{
+span {
     display: block;
     font-size: 4.5rem;
     color: black;
-    text-transform: capitalize;
-    font-weight:700;
+    /* text-transform: capitalize; */
+    font-weight: 700;
 }
 
-.arrow{
+.arrow {
     display: inline-block;
-    padding-top:0;
+    padding-top: 0;
     font-size: 4rem;
     transform: scaleX(1);
-    animation: scrollDown .55s ease-in-out infinite alternate-reverse
+    animation: scrollDown 0.55s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes scrollDown {
-    to{
+    to {
         padding-top: 30px;
-        transform: scaleX(.92);
+        transform: scaleX(0.92);
     }
 }
 
-.section-texts{
+.section-texts {
     position: relative;
 }
 
-.texts{
-    position:relative;
+.texts {
+    position: relative;
     top: -8px;
     left: -8px;
 }
 
-.texts-mask{
+.texts-mask {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
 }
 
 .texts-mask span {
-    color:transparent;
+    color: transparent;
 }
 
-.quote-left::before{
-    content: '❝';
+.quote-left::before {
+    content: "❝";
     color: red;
     position: absolute;
     top: -3.5rem;
     left: -3.5rem;
 }
 
-
-
-.texts-mask .animate::after{
-    content:'';
+.texts-mask .animate::after {
+    content: "";
     position: absolute;
     top: 0;
     left: -10px;
-    background:#fff;
+    background: #fff;
     height: 105%;
     width: 105%;
     transform-origin: right;
@@ -87,13 +85,13 @@ span{
     opacity: 0.75;
 }
 
-.texts-mask .animate{
-    transition: all .75s ease-in-out;
+.texts-mask .animate {
+    transition: all 0.75s ease-in-out;
     transform-origin: right;
-    color: rgba(0,0,0,0);
+    color: rgba(0, 0, 0, 0);
     transform: scaleX(1);
 }
 
-.texts-mask .animate.animate-init{
+.texts-mask .animate.animate-init {
     transform: scaleX(0);
 }

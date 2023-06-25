@@ -1,29 +1,23 @@
-window.addEventListener("scroll", (event) => {
-    let span = document.querySelectorAll('.animate');
-    let scroll = this.scrollY;
+let target = document.querySelectorAll(".animate");
+let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
+};
 
-    console.log(scroll)
+let callback = (entries) => {
+    entries.map((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate-init");
+        } else {
+            entry.target.classList.remove("animate-init");
+        }
+    });
+};
 
-    if (scroll > 200 && scroll < 700) {
-        span[0].classList.add('animate-init');
-    }else {
-        span[0].classList.remove('animate-init');
-    }
-    if (scroll > 250 && scroll < 750) {
-        span[1].classList.add('animate-init');
-    }else {
-        span[1].classList.remove('animate-init');
-    }
+let observer = new IntersectionObserver(callback, options);
 
-    if (scroll > 300 && scroll < 800 ) {
-        span[2].classList.add('animate-init');
-    }else {
-        span[2].classList.remove('animate-init');
-    }
-
-    if (scroll > 350 && scroll < 850) {
-        span[3].classList.add('animate-init');
-    }else {
-        span[3].classList.remove('animate-init');
-    }
+target.forEach((el) => {
+    console.log("target", el);
+    observer.observe(el);
 });
